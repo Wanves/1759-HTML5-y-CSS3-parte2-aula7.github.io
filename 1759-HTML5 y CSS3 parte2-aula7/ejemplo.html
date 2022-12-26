@@ -1,0 +1,267 @@
+// como hacer un menu responsive html css y javaScript?
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hungry Burger Company</title>
+  <link rel="stylesheet" href="CSS/HBCStyleSheet.css">
+  <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Permanent+Marker|Roboto+Slab:400,700" rel="stylesheet">
+</head>
+
+<body>
+
+  <!--  Main Container-->
+  <header id="nav">
+
+    <nav style="width:100%;">
+      <div class="dropdown-toggle">
+        <h1 class="Logo">HBC</h1>
+
+        <button id="cc"><a href="#" id="cc" class="home"></a>Home</a></button>
+        <div class="DropdownList" id="cc">
+          <button>About Us</button>
+          <ul>
+            <li><a href="#">Who We Are</a></li>
+            <li><a href="#">What we do</a></li>
+          </ul>
+        </div>
+        <div class="DropdownList" id="cc">
+          <button>Menu</button>
+          <ul>
+            <li><a href="#">Off The Menu</a></li>
+            <li><a href="#">Build a Burger</a></li>
+          </ul>
+        </div>
+        <div class="DropdownList" id="cc">
+          <button>Contact Us</button>
+          <ul id="cc">
+            <li><a href="#">Join Us</a></li>
+            <li><a href="#">Find Us</a></li>
+          </ul>
+
+
+        </div>
+      </div>
+       <button class="openbtn" onclick="openNav()">☰</button>  
+
+    </nav>
+  </header>
+
+  <script src="Javascript/HBC.js"></script>
+</body>
+<style>
+#cc{
+display:block;
+}
+.sidebar{
+display:none;
+}
+#mySidebar{
+display:none;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+
+}
+
+h1{
+    font-family: 'Alfa Slab One', cursive;
+
+    letter-spacing: 5px
+}
+
+
+a{
+    font-family: 'Permanent Marker', cursive;
+    color:#FF8240;
+}
+
+#nav {
+    border-bottom: 2px solid red;
+    background-color: #FF8240;
+    position:absolute;
+    left:0px;
+    top:0px;
+
+}
+
+.dropdown-toggle {
+    height: 10vh;
+    display: flex;  
+    justify-content: space-around;
+    align-items: center;
+    width: 95%;
+    margin: auto;
+
+}
+
+.dropdown-toggle {
+    position: relative;
+}
+
+.dropdown-toggle ul{
+    position: absolute;
+    background: White;
+    margin-top: 10px;
+    width: 150px; 
+    height: 90px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column; 
+    list-style: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+}
+
+.dropdown-toggle a {
+    text-decoration: none;
+}
+
+.dropdown-toggle button,
+.home {
+    background: none;
+    border:  none;
+    color: rgb(196, 19, 19);
+    font-size: 18px;
+    font-family: 'Permanent Marker', cursive;
+    cursor: pointer;
+}
+
+.dropdown-toggle button:hover,
+.home:hover {
+    color: #FFF940
+}
+
+.DropdownList :hover {
+    color: rgb(196, 19, 19);
+}
+
+
+.DropdownList button:focus + ul {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0px)
+}
+#nav{
+
+width:100%;
+}
+.openbtn {
+display:none;
+}
+@media only screen and (max-width: 600px) {
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: orange;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  display:block;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  display:block;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+#mySidebar{
+display:block;
+}
+#nav{
+display:block;
+}
+#cc{
+display:none;
+}
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <a href="#">Home</a> <br>
+      <a href="#">About Us</a><br>
+
+           <a href="#">Who We Are</a><br>
+       <a href="#">What we do</a><br>
+
+
+<div id="main">
+</div>
+
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
+
+
